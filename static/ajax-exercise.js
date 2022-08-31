@@ -59,3 +59,15 @@ function orderMelons(evt) {
     });
 }
 document.querySelector('#order-form').addEventListener('submit', orderMelons);
+
+
+// Further study
+
+function getDogPhoto(evt) {
+  fetch('https://dog.ceo/api/breeds/image/random')
+    .then((response) => response.json())
+    .then((responseData) => {
+      document.querySelector('#dog-image').insertAdjacentHTML('beforeend', `<img src=${responseData.message}>`);
+    });
+}
+document.querySelector('#dog-button').addEventListener('click', getDogPhoto);
