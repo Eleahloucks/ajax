@@ -54,6 +54,9 @@ function orderMelons(evt) {
       if(status.code === 'ERROR'){
         //if the result code is ERROR, make it show up in red (see our CSS!)
         document.querySelector('#order-status').classList.add('order-error');
+      } else {
+        //remove error class from div
+        document.querySelector('#order-status').classList.remove('order-error');
       }
       document.querySelector('#order-status').innerHTML = status.msg;
     });
